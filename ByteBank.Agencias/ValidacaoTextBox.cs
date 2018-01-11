@@ -40,7 +40,17 @@ namespace ByteBank.Agencias
         {
             if (_validacao != null)
             {
-                var ehValido = _validacao(Text);
+                var listaValidacao = _validacao.GetInvocationList();
+                var ehValido = true;
+
+                foreach (ValidacaoEventHandler validacao in listaValidacao)
+                {
+                    if(!validacao(Text))
+                    {
+                        ehValido = false;
+                        break;
+                    }
+                }
 
                 Background = ehValido
                     ? new SolidColorBrush(Colors.White)
