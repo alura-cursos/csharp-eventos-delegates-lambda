@@ -42,11 +42,11 @@ namespace ByteBank.Agencias
 
         private void AtualizarControles()
         {
-            btnOk.Click += new RoutedEventHandler(btnOk_Click);
-            btnCancelar.Click += new RoutedEventHandler(btnCancelar_Click);
+            var okEventHandler = (RoutedEventHandler)btnOk_Click + Fechar;
+            var cancelarEventHandler = (RoutedEventHandler)btnCancelar_Click + Fechar;
 
-            btnOk.Click += new RoutedEventHandler(Fechar);
-            btnCancelar.Click += new RoutedEventHandler(Fechar);
+            btnOk.Click += okEventHandler;
+            btnCancelar.Click += cancelarEventHandler;
         }
 
         private void btnOk_Click(object sender, EventArgs e) =>
