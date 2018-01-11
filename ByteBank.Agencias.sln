@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank.Agencias", "ByteBank.Agencias\ByteBank.Agencias.csproj", "{DAF9CB17-718E-4A21-92A2-EA1890E09C09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank.Agencias.DAL", "ByteBank.Agencias.DAL\ByteBank.Agencias.DAL.csproj", "{9B6D9421-2DF4-4A84-8C13-B3DE457FEA2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAF9CB17-718E-4A21-92A2-EA1890E09C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF9CB17-718E-4A21-92A2-EA1890E09C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF9CB17-718E-4A21-92A2-EA1890E09C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF9CB17-718E-4A21-92A2-EA1890E09C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6D9421-2DF4-4A84-8C13-B3DE457FEA2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6D9421-2DF4-4A84-8C13-B3DE457FEA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6D9421-2DF4-4A84-8C13-B3DE457FEA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6D9421-2DF4-4A84-8C13-B3DE457FEA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48120741-7541-4C0D-AD71-CFA5E2C0B63B}
+	EndGlobalSection
+EndGlobal
