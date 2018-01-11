@@ -42,14 +42,8 @@ namespace ByteBank.Agencias
 
         private void AtualizarControles()
         {
-            RoutedEventHandler dialogResultTrue = delegate (object o, RoutedEventArgs e)
-            {
-                DialogResult = true;
-            };
-            RoutedEventHandler dialogResultFalse = delegate (object o, RoutedEventArgs e)
-            {
-                DialogResult = true;
-            };
+            RoutedEventHandler dialogResultTrue = (o, e) => DialogResult = true;
+            RoutedEventHandler dialogResultFalse = (o, e) => DialogResult = true;
 
             var okEventHandler = dialogResultTrue + Fechar;
             var cancelarEventHandler = dialogResultFalse + Fechar;
