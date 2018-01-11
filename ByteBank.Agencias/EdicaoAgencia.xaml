@@ -9,15 +9,15 @@
     <Canvas>
         <StackPanel Canvas.Top="15" Canvas.Left="15" Width="270">
             <TextBlock FontWeight="Bold">Número</TextBlock>
-            <TextBox Name="txtNumero"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtNumero"></local:ValidacaoTextBox>
             <TextBlock FontWeight="Bold">Nome</TextBlock>
-            <TextBox Name="txtNome"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtNome"></local:ValidacaoTextBox>
             <TextBlock FontWeight="Bold">Telefone</TextBlock>
-            <TextBox Name="txtTelefone"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtTelefone"></local:ValidacaoTextBox>
             <TextBlock FontWeight="Bold">Descrição</TextBlock>
-            <TextBox Name="txtDescricao"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtDescricao"></local:ValidacaoTextBox>
             <TextBlock FontWeight="Bold">Endereço</TextBlock>
-            <TextBox Name="txtEndereco"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtEndereco"></local:ValidacaoTextBox>
 
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"

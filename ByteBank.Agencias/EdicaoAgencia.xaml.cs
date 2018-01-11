@@ -29,6 +29,14 @@ namespace ByteBank.Agencias
             _agencia = agencia ?? throw new ArgumentNullException(nameof(agencia));
             AtualizarCamposDeTexto();
             AtualizarControles();
+
+            ValidarCampoNulo(txtNumero, EventArgs.Empty);
+            ValidarSomenteDigito(txtNumero, EventArgs.Empty);
+
+            ValidarCampoNulo(txtNome, EventArgs.Empty);
+            ValidarCampoNulo(txtTelefone, EventArgs.Empty);
+            ValidarCampoNulo(txtEndereco, EventArgs.Empty);
+            ValidarCampoNulo(txtDescricao, EventArgs.Empty);
         }
 
         private void AtualizarCamposDeTexto()
@@ -63,7 +71,7 @@ namespace ByteBank.Agencias
         private void ValidarSomenteDigito(object sender, EventArgs e)
         {
             var txt = sender as TextBox;
-            
+
             var todosCaracteresSaoDigitos = txt.Text.All(Char.IsDigit);
 
             txt.Background = todosCaracteresSaoDigitos
