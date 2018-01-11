@@ -63,13 +63,8 @@ namespace ByteBank.Agencias
         private void ValidarSomenteDigito(object sender, EventArgs e)
         {
             var txt = sender as TextBox;
-
-            Func<char, bool> verificaSeEhDigito = caractere =>
-            {
-                return Char.IsDigit(caractere);
-            };
-
-            var todosCaracteresSaoDigitos = txt.Text.All(verificaSeEhDigito);
+            
+            var todosCaracteresSaoDigitos = txt.Text.All(Char.IsDigit);
 
             txt.Background = todosCaracteresSaoDigitos
                 ? new SolidColorBrush(Colors.White)
