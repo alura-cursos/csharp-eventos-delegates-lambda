@@ -29,7 +29,9 @@ namespace ByteBank.Agencias
             InitializeComponent();
 
             lstAgencias = new ListBox();
+
             AtualizarControles();
+            AtualizarListaDeAgencias();
         }
 
         private void AtualizarControles()
@@ -44,6 +46,29 @@ namespace ByteBank.Agencias
 
             container.Children.Add(lstAgencias);
 
+            btnEditar.Click += new RoutedEventHandler(btnEditar_Click);
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            var agenciaAtual = (Agencia)lstAgencias.SelectedItem;
+            var janelaEdicao = new EdicaoAgencia(agenciaAtual);
+
+            var resultado = janelaEdicao.ShowDialog().Value;
+
+            if (resultado)
+            {
+                // Usuario clicou em Ok
+            }
+            else
+            {
+                // Usuario clicou em Cancelar
+            }
+
+        }
+
+        private void AtualizarListaDeAgencias()
+        {
             lstAgencias.Items.Clear();
             var agencias = _contextoBancoDeDados.Agencias.ToList();
             foreach (var agencia in agencias)

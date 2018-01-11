@@ -21,6 +21,8 @@
         </StackPanel>
         <Button Content="Excluir" Canvas.Left="432" Canvas.Top="289" Width="75"
                 Click="Button_Click" Name="btnExcluir"/>
+        <Button Content="Editar" Canvas.Left="352" Canvas.Top="289" Width="75"
+                Name="btnEditar"/>
 
     </Canvas>
 </Window>

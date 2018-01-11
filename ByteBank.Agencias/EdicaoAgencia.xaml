@@ -1,0 +1,36 @@
+﻿<Window x:Class="ByteBank.Agencias.EdicaoAgencia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ByteBank.Agencias"
+        mc:Ignorable="d"
+        Title="EdicaoAgencia" Height="300" Width="300">
+    <Canvas>
+        <StackPanel Canvas.Top="15" Canvas.Left="15" Width="270">
+            <TextBlock FontWeight="Bold">Número</TextBlock>
+            <TextBox Name="txtNumero"></TextBox>
+            <TextBlock FontWeight="Bold">Nome</TextBlock>
+            <TextBox Name="txtNome"></TextBox>
+            <TextBlock FontWeight="Bold">Telefone</TextBlock>
+            <TextBox Name="txtTelefone"></TextBox>
+            <TextBlock FontWeight="Bold">Descrição</TextBlock>
+            <TextBox Name="txtDescricao"></TextBox>
+            <TextBlock FontWeight="Bold">Endereço</TextBlock>
+            <TextBox Name="txtEndereco"></TextBox>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,5">
+                <Button Content="Ok"
+                        Margin="15,0"
+                        Padding="5"
+                        Name="btnOk"/>
+                <Button Content="Cancelar"
+                        Padding="5"
+                        Name="btnCancelar"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Canvas>
+</Window>
