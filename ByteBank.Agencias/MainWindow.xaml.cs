@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank.Agencias.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,21 @@ namespace ByteBank.Agencias
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ByteBankEntities _contextoBancoDeDados = new ByteBankEntities();
+
         public MainWindow()
         {
             InitializeComponent();
-            var context = new ByteBank.Agencias.DAL.ByteBankEntities();
-            var itens = context.Agencias.ToList();
-            itens.ToString();
+
+            AtualizarControles();
+        }
+
+        private void AtualizarControles()
+        {
+            lstAgencias.Items.Clear();
+            var agencias = _contextoBancoDeDados.Agencias.ToList();
+            foreach (var agencia in agencias)
+                lstAgencias.Items.Add(agencia);
         }
     }
 }
