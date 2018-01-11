@@ -29,14 +29,6 @@ namespace ByteBank.Agencias
             _agencia = agencia ?? throw new ArgumentNullException(nameof(agencia));
             AtualizarCamposDeTexto();
             AtualizarControles();
-
-            ValidarCampoNulo(txtNumero, EventArgs.Empty);
-            ValidarSomenteDigito(txtNumero, EventArgs.Empty);
-
-            ValidarCampoNulo(txtNome, EventArgs.Empty);
-            ValidarCampoNulo(txtTelefone, EventArgs.Empty);
-            ValidarCampoNulo(txtEndereco, EventArgs.Empty);
-            ValidarCampoNulo(txtDescricao, EventArgs.Empty);
         }
 
         private void AtualizarCamposDeTexto()
@@ -59,34 +51,23 @@ namespace ByteBank.Agencias
             btnOk.Click += okEventHandler;
             btnCancelar.Click += cancelarEventHandler;
 
-            txtNumero.TextChanged += ValidarCampoNulo;
-            txtNumero.TextChanged += ValidarSomenteDigito;
+            txtNumero.Validacao += ValidarCampoNulo;
+            txtNumero.Validacao += ValidarSomenteDigito;
 
-            txtNome.TextChanged += ValidarCampoNulo;
-            txtDescricao.TextChanged += ValidarCampoNulo;
-            txtEndereco.TextChanged += ValidarCampoNulo;
-            txtTelefone.TextChanged += ValidarCampoNulo;
+            txtNome.Validacao += ValidarCampoNulo;
+            txtDescricao.Validacao += ValidarCampoNulo;
+            txtEndereco.Validacao += ValidarCampoNulo;
+            txtTelefone.Validacao += ValidarCampoNulo;
         }
         
-        private void ValidarSomenteDigito(object sender, EventArgs e)
+        private bool ValidarSomenteDigito(string texto)
         {
-            var txt = sender as TextBox;
-
-            var todosCaracteresSaoDigitos = txt.Text.All(Char.IsDigit);
-
-            txt.Background = todosCaracteresSaoDigitos
-                ? new SolidColorBrush(Colors.White)
-                : new SolidColorBrush(Colors.OrangeRed);
+            return texto.All(Char.IsDigit);
         }
 
-        private void ValidarCampoNulo(object sender, EventArgs e)
+        private bool ValidarCampoNulo(string texto)
         {
-            var txt = sender as TextBox;
-            var textoEstaVazio = String.IsNullOrEmpty(txt.Text);
-
-            txt.Background = textoEstaVazio
-                ? new SolidColorBrush(Colors.OrangeRed)
-                : new SolidColorBrush(Colors.White);
+            return !String.IsNullOrEmpty(texto);
         }
 
         private void Fechar(object sender, EventArgs e) =>
