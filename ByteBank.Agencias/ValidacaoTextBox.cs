@@ -26,17 +26,13 @@ namespace ByteBank.Agencias
             }
         }
 
-        public ValidacaoTextBox()
+        protected override void OnTextChanged(TextChangedEventArgs e)
         {
-            TextChanged += ValidacaoTextBox_TextChanged;
-        }
-
-        private void ValidacaoTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            base.OnTextChanged(e);
             OnValidacao();
         }
 
-        private void OnValidacao()
+        protected virtual void OnValidacao()
         {
             if (_validacao != null)
             {
