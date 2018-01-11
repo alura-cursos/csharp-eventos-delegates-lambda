@@ -76,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ValidacaoEventArgs.cs" />
     <Compile Include="ValidacaoTextBox.cs" />
     <Page Include="EdicaoAgencia.xaml">
       <SubType>Designer</SubType>
